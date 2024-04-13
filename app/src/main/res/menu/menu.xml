@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:enabled="true"
+            android:icon="@drawable/home_img"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/dashborad"
+            android:enabled="true"
+            android:icon="@drawable/dashborad_img"
+            android:title="Dashboard" />
+
+        <item
+            android:id="@+id/notifications"
+            android:enabled="true"
+            android:icon="@drawable/notification_img"
+            android:title="Notifications" />
+
+    </group>
+
+</menu>
