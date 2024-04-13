@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.standardthree_fragment.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -19,19 +20,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         BottomNavigation()
-
     }
+
+
 
 
     // bottomNavigation 구현함수
     private fun BottomNavigation(){
 
-
-        // main_framelayout레이아웃을 HomeFragment로 대체
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.main_framelayout, HomeFragment())
-            .commitAllowingStateLoss()
-
+        // // MainActivity실행되자마자 나타날 프레그먼트
+        setFragment(HomeFragment())
 
         binding.mainBottomnavgation.setOnItemSelectedListener { item ->
 
@@ -39,35 +37,31 @@ class MainActivity : AppCompatActivity() {
 
                 // home클릭시 HomeFragment()로 대체
                 R.id.home -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_framelayout, HomeFragment())
-                        .commitAllowingStateLoss()
+                    setFragment(HomeFragment())
                     return@setOnItemSelectedListener true
                 }
 
-                // mypage클릭시 MypageFragment()로 대체
+                // dashborad클릭시 DashboardFragment()로 대체
                 R.id.dashborad -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_framelayout, DashboardFragment())
-                        .commitAllowingStateLoss()
-
+                    setFragment(DashboardFragment())
                     return@setOnItemSelectedListener true
                 }
 
-                // mypage클릭시 MypageFragment()로 대체
+                // notifications클릭시 NotificationsFragment()로 대체
                 R.id.notifications -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_framelayout, NotificationsFragment())
-                        .commitAllowingStateLoss()
-
+                    setFragment(NotificationsFragment())
                     return@setOnItemSelectedListener true
                 }
-
             }
             false
         }
+    }
 
 
+    private fun setFragment(fragment : Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_framelayout, fragment)
+            .commitAllowingStateLoss()
     }
 
 }
