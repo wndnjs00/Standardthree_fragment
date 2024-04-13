@@ -20,56 +20,41 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
+        android:id="@+id/flower_name_content_tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="비어있음"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="80dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/flower_description_content_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비어있음"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/flower_name_content_tv2"
+        app:layout_constraintTop_toBottomOf="@+id/flower_name_content_tv2" />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/send_btn3"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:background="@drawable/send_corner_btn"
+        android:text="전달"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/flower_name_tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="꽃이름:"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/flower_name_content_tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="비어있음"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintStart_toEndOf="@+id/flower_name_tv2"
-            app:layout_constraintTop_toTopOf="@+id/flower_name_tv2" />
-
-        <TextView
-            android:id="@+id/flower_description_tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="설명:"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="@+id/flower_name_tv2"
-            app:layout_constraintTop_toBottomOf="@+id/flower_name_tv2" />
-
-        <TextView
-            android:id="@+id/flower_description_content_tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="비어있음"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintStart_toEndOf="@+id/flower_description_tv2"
-            app:layout_constraintTop_toBottomOf="@+id/flower_name_content_tv2" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/notificationsfragment_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

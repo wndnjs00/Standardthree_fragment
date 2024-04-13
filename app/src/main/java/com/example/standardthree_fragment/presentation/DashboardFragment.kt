@@ -34,8 +34,8 @@ class DashboardFragment : Fragment() {
         // 1. bundle로 보낸 데이터 받아오기
         val name = arguments?.getString("name").toString()
         val description = arguments?.getString("description").toString()
-        binding.flowerNameContentTv.text = name
-        binding.flowerDescriptionContentTv.text = description
+        binding.flowerNameContentTv.text = "꽃이름: $name"
+        binding.flowerDescriptionContentTv.text = "설명: $description"
 
 
 

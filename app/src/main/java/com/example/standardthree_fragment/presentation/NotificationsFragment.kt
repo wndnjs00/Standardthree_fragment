@@ -33,11 +33,11 @@ class NotificationsFragment : Fragment() {
 
         val flowerModel = ViewModelProvider(requireActivity()).get(FlowerViewModel::class.java)
         flowerModel.flowerData.observe(viewLifecycleOwner, Observer {
-            binding.flowerNameContentTv2.text = dataSoure.get(1).name
+            binding.flowerNameContentTv2.text = "꽃이름: ${dataSoure.get(1).name}"
         })
 
         flowerModel.flowerData.observe(viewLifecycleOwner, Observer {
-            binding.flowerDescriptionContentTv2.text = it
+            binding.flowerDescriptionContentTv2.text = "설명: $it"
         })
 
 
