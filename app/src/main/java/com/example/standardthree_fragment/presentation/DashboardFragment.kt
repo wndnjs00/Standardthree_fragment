@@ -20,10 +20,7 @@ class DashboardFragment : Fragment() {
 
     private val TAG = DashboardFragment::class.java.simpleName
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,8 +29,8 @@ class DashboardFragment : Fragment() {
         binding = FragmentDashboardBinding.inflate(inflater,container,false)
 
         // 1. bundle로 보낸 데이터 받아오기
-        val name = arguments?.getString("name").toString()
-        val description = arguments?.getString("description").toString()
+        val name = arguments?.getString("name1").toString()
+        val description = arguments?.getString("description1").toString()
         binding.flowerNameContentTv.text = "꽃이름: $name"
         binding.flowerDescriptionContentTv.text = "설명: $description"
 

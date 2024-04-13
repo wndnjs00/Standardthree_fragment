@@ -33,27 +33,30 @@ class HomeFragment : Fragment() {
 
             // 데이터리스트 가져옴
             val dataSoure = DataSource.getDataSoures().getFlowerList()
+            val dashboardFragment = DashboardFragment()
             val bundle = Bundle()
 
-            bundle.putString("name", dataSoure.get(0).name)
-            bundle.putString("description", dataSoure.get(0).description)
+            bundle.putString("name1", dataSoure.get(0).name)
+            bundle.putString("description1", dataSoure.get(0).description)
             Log.d(TAG, dataSoure.get(0).name)
+            Log.d(TAG, dataSoure.get(0).description)
 
-            DashboardFragment().arguments = bundle
+            dashboardFragment.arguments = bundle
+
             parentFragmentManager.beginTransaction()
-                .replace(R.id.main_framelayout, DashboardFragment())
+                .replace(R.id.main_framelayout, dashboardFragment)
                 .commit()
         }
 
 
 
         // 3. Result API 사용해서 보낸 데이터 받아옴
-        setFragmentResultListener("name") { requestKey, bundle ->
+        setFragmentResultListener("Name") { requestKey, bundle ->
             val name = bundle.getString("name")
             binding.flowerNameContentTv3.text = "꽃이름: $name"
         }
 
-        setFragmentResultListener("description") { requestKey, bundle ->
+        setFragmentResultListener("Description") { requestKey, bundle ->
             val description = bundle.getString("description")
             binding.flowerDescriptionContentTv3.text = "설명: $description"
         }

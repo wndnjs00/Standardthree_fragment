@@ -43,8 +43,8 @@ class NotificationsFragment : Fragment() {
         // 3. Result API를 사용해서 데이터 전달
         binding.sendBtn3.setOnClickListener {
 
-            setFragmentResult("name", bundleOf("name" to dataSoure.get(2).name))
-            setFragmentResult("description", bundleOf("description" to dataSoure.get(2).description))
+            setFragmentResult("Name", bundleOf("name" to dataSoure.get(2).name))
+            setFragmentResult("Description", bundleOf("description" to dataSoure.get(2).description))
 
             parentFragmentManager.beginTransaction()
                 .replace(R.id.main_framelayout, HomeFragment())
