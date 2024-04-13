@@ -50,4 +50,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // Result API
+    implementation ("androidx.fragment:fragment-ktx:1.6.2")
 }
