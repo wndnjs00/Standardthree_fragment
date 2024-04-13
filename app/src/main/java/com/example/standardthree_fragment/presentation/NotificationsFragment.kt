@@ -37,8 +37,12 @@ class NotificationsFragment : Fragment() {
         })
 
         flowerModel.flowerData.observe(viewLifecycleOwner, Observer {
-            binding.flowerDescriptionContentTv2.text = "설명: $it"
+            binding.flowerDescriptionContentTv2.text = "설명: ${dataSoure.get(1).description}"
         })
+
+
+        // API를 사용해서 데이터 전달
+
 
 
         return binding.root
