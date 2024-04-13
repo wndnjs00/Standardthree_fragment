@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.standardthree_fragment.R
+import com.example.standardthree_fragment.data.DataSource
 import com.example.standardthree_fragment.databinding.FragmentNotificationsBinding
 import com.example.standardthree_fragment.viewModel.FlowerViewModel
 
@@ -26,9 +27,13 @@ class NotificationsFragment : Fragment() {
     ): View? {
         binding = FragmentNotificationsBinding.inflate(inflater, container,false)
 
+
+        // viewModel로 전달한 데이터 받아와서 뿌려주기
+        val dataSoure = DataSource.getDataSoures().getFlowerList()
+
         val flowerModel = ViewModelProvider(requireActivity()).get(FlowerViewModel::class.java)
         flowerModel.flowerData.observe(viewLifecycleOwner, Observer {
-            binding.flowerNameContentTv2.text = it
+            binding.flowerNameContentTv2.text = dataSoure.get(1).name
         })
 
         flowerModel.flowerData.observe(viewLifecycleOwner, Observer {
